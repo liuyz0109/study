@@ -1,20 +1,17 @@
-package com.liuyz.rabbitmq.simple;
+package com.liuyz.rabbitmq.work.fair;
 
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
 /**
  * @author <a href="mailto:liuyaozong@gtmap.cn">liuyaozong</a>
- * @version 1.0, 2021/4/27
- * @description 生产者-简单模式
+ * @version 1.0, 2021/4/28
+ * @description 消费者1-work模式-公平分发
  */
-public class Producer {
+public class Consumer1 {
 
     public static void main(String[] args) {
-
         //创建连接工厂
         ConnectionFactory connectionFactory = new ConnectionFactory();
         //配置连接参数
@@ -33,30 +30,42 @@ public class Producer {
         try {
             //创建连接
             //连接名称
-            connection = connectionFactory.newConnection("生产者");
+            connection = connectionFactory.newConnection("消费者1");
             //通过连接获取通道
             channel = connection.createChannel();
             //通过创建交换机，声明队列，绑定关系，路由Key，发送消息，接收消息
-            String queueName = "queue1";
+            String queueName = "queue2";
             /*
              * param1 队列名称
-             * param2 是否持久化，持久化即存盘
-             * param3 是否有排他性，独占独立
-             * param4 是否自动删除，随着最后一个消息被消费，是否删除该队列
-             * param5 携带的参数
+             * param2 是否自动应答
+             * param3 回调函数
+             * param4 异常回调函数
              */
-            channel.queueDeclare(queueName,false,false,false,null);
-            //准备消息内容
-            String msg = "Hello Rabbitmq!!!";
-            /*
-             * param1 交换机名称，为空则使用默认交换机，模式为direct
-             * param2 路由key
-             * param3 携带参数
-             * param4 消息内容
-             */
-            //发送消息给队列queue
-            channel.basicPublish("", "",null, msg.getBytes());
-            System.out.println("消息发送成功！！！");
+            Channel finalChannel = channel;
+            //设置指标
+            finalChannel.basicQos(1);
+            //手动应答
+            channel.basicConsume(queueName, false, new DeliverCallback() {
+                @Override
+                public void handle(String s, Delivery delivery) throws IOException {
+                    System.out.println("收到消息：" + new String(delivery.getBody(), "UTF-8"));
+                    try {
+                        Thread.sleep(200);
+                        //应答内容
+                        finalChannel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new CancelCallback() {
+                @Override
+                public void handle(String s) throws IOException {
+                    System.out.println("接收消息失败");
+                }
+            });
+            System.out.println("开始接收消息！！！");
+            //使系统保持运行状态
+            System.in.read();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -77,7 +86,6 @@ public class Producer {
                 }
             }
         }
-
     }
 
 }
