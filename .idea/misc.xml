@@ -6,10 +6,12 @@
         <option value="$PROJECT_DIR$/mybatis-core/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server-01/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server-02/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-boot/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-boot-consumer/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="SuppressionsComponent">
