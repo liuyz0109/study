@@ -1,4 +1,4 @@
-package com.rabbitmqboot.demo.config;
+package com.rabbitmqbootconsumer.demo.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -10,11 +10,13 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author <a href="mailto:liuyaozong@gtmap.cn">liuyaozong</a>
  * @version 1.0, 2021/4/28
- * @description rabbitmq配置类
+ * @description rabbitmq配置类-fanout
+ * 配置类可以配置在生产者也可以配置在消费者
+ * 配置类最好放在消费者，如果消费者消费时找不到交换机或队列，会报错
  */
 
 @Configuration
-public class RabbitMqConfiguration {
+public class RabbitMqFanoutConfiguration {
 
     //声明交换机
     @Bean
@@ -24,34 +26,34 @@ public class RabbitMqConfiguration {
 
     //声明队列
     @Bean
-    public Queue smsQueue() {
+    public Queue smsQueueFanout() {
         return new Queue("sms.fanout.queue", true);
     }
 
     @Bean
-    public Queue emailQueue() {
+    public Queue emailQueueFanout() {
         return new Queue("email.fanout.queue", true);
     }
 
     @Bean
-    public Queue wechatQueue() {
+    public Queue wechatQueueFanout() {
         return new Queue("wechat.fanout.queue", true);
     }
 
     //绑定关系
     @Bean
-    public Binding smsBinding() {
-        return BindingBuilder.bind(smsQueue()).to(fanoutExchange());
+    public Binding smsBindingFanout() {
+        return BindingBuilder.bind(smsQueueFanout()).to(fanoutExchange());
     }
 
     @Bean
-    public Binding emailBinding() {
-        return BindingBuilder.bind(emailQueue()).to(fanoutExchange());
+    public Binding emailBindingFanout() {
+        return BindingBuilder.bind(emailQueueFanout()).to(fanoutExchange());
     }
 
     @Bean
-    public Binding wechatBinding() {
-        return BindingBuilder.bind(wechatQueue()).to(fanoutExchange());
+    public Binding wechatBindingFanout() {
+        return BindingBuilder.bind(wechatQueueFanout()).to(fanoutExchange());
     }
 
 }

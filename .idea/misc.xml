@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/eureka-server-02/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-boot/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-boot-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-boot-producer/pom.xml" />
       </list>
     </option>
   </component>

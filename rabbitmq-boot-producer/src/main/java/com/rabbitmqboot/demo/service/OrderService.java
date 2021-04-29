@@ -25,13 +25,55 @@ public class OrderService {
      * @author <a href="mailto:liuyaozong@gtmap.cn">liuyaozong</a>
      * @description 创建订单
      */
-    public void makeOrder(String userid, String goodid, Integer num) {
+    public void makeOrderFanout(String userid, String goodid, Integer num) {
         //查询商品库存量
         //订单编号
         String orderid = UUID.randomUUID().toString().replaceAll("-", "");
         System.out.println("订单生成成功：" + orderid);
         String exchangeName = "fanout_order_exchange";
         String routingKey = "";
+        //发送消息到mq
+        rabbitTemplate.convertAndSend(exchangeName, routingKey, orderid);
+    }
+
+    /**
+     * @param userid 用户id
+     * @param goodid 商品id
+     * @param num 商品数量
+     * @author <a href="mailto:liuyaozong@gtmap.cn">liuyaozong</a>
+     * @description 创建订单
+     */
+    public void makeOrderDirect(String userid, String goodid, Integer num) {
+        //查询商品库存量
+        //订单编号
+        String orderid = UUID.randomUUID().toString().replaceAll("-", "");
+        System.out.println("订单生成成功：" + orderid);
+        String exchangeName = "direct_order_exchange";
+        String routingKey1 = "sms";
+        String routingKey2 = "email";
+        //发送消息到mq
+        rabbitTemplate.convertAndSend(exchangeName, routingKey1, orderid);
+        rabbitTemplate.convertAndSend(exchangeName, routingKey2, orderid);
+    }
+
+    /**
+     * @param userid 用户id
+     * @param goodid 商品id
+     * @param num 商品数量
+     * @author <a href="mailto:liuyaozong@gtmap.cn">liuyaozong</a>
+     * @description 创建订单
+     */
+    public void makeOrderTopic(String userid, String goodid, Integer num) {
+        //查询商品库存量
+        //订单编号
+        String orderid = UUID.randomUUID().toString().replaceAll("-", "");
+        System.out.println("订单生成成功：" + orderid);
+        String exchangeName = "topic_order_exchange";
+        //#.email.#
+        //*.sms.*
+        //#.wechat.*
+        //email和sms队列可以接收到消息
+        String routingKey = "email.sms.wechat";
         //发送消息到mq
         rabbitTemplate.convertAndSend(exchangeName, routingKey, orderid);
     }

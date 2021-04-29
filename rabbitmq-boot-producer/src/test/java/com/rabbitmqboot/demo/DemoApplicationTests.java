@@ -12,8 +12,18 @@ class DemoApplicationTests {
     private OrderService orderService;
 
     @Test
-    void contextLoads() {
-        orderService.makeOrder("1", "1", 10);
+    void fanoutTest() {
+        orderService.makeOrderFanout("1", "1", 10);
+    }
+
+    @Test
+    void directTest() {
+        orderService.makeOrderDirect("1", "1", 10);
+    }
+
+    @Test
+    void topicTest() {
+        orderService.makeOrderTopic("1", "1", 10);
     }
 
 }

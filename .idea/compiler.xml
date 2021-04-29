@@ -10,11 +10,10 @@
         <module name="rabbitmq-boot-consumer" />
         <module name="eureka-server-02" />
         <module name="mybatis-core" />
-        <module name="demo" />
+        <module name="rabbitmq-boot-producer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="demo" target="1.8" />
       <module name="eureka-server-01" target="1.8" />
       <module name="eureka-server-02" target="1.8" />
       <module name="mybatis-core" target="1.5" />

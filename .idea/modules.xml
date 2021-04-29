@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rabbitmq-boot-producer/demo.iml" filepath="$PROJECT_DIR$/rabbitmq-boot-producer/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server-01/eureka-server-01.iml" filepath="$PROJECT_DIR$/eureka-server-01/eureka-server-01.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server-02/eureka-server-02.iml" filepath="$PROJECT_DIR$/eureka-server-02/eureka-server-02.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-core/mybatis-core.iml" filepath="$PROJECT_DIR$/mybatis-core/mybatis-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/rabbitmq/rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmq-boot-consumer/rabbitmq-boot-consumer.iml" filepath="$PROJECT_DIR$/rabbitmq-boot-consumer/rabbitmq-boot-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq-boot-producer/demo.iml" filepath="$PROJECT_DIR$/rabbitmq-boot-producer/demo.iml" />
     </modules>
   </component>
 </project>
