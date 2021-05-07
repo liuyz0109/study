@@ -40,7 +40,7 @@ public class RabbitMqDirectTTLConfiguration {
         args.put("x-message-ttl", 5000);
         //设置最大存储信息数量
         args.put("x-max-length", 5);
-        //绑定死信队列
+        //绑定死信交换机
         args.put("x-dead-letter-exchange", "ttl_dead_direct_exchange");
         //绑定死信队列key
         args.put("x-dead-letter-routing-key", "ttlDead");

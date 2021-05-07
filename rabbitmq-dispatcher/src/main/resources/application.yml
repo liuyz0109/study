@@ -6,3 +6,19 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123
+  rabbitmq:
+    virtual-host: /
+    username: liuyz
+    password: 123456
+    # 因为使用了集群，所以需要配置集群地址，多个地址使用英文逗号,隔开
+    addresses: 192.168.141.168:5672
+    listener:
+      simple:
+        acknowledge-mode: manual # 开启手动ack，默认为none，让程序控制消息的重发、删除、转移
+        retry:
+          enabled: true # 开启重试配置，默认为false
+          max-attempts: 5 # 重试次数，默认为3
+          initial-interval: 2000ms # 重试间隔时间
+logging:
+  level:
+    root: debug

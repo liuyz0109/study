@@ -23,7 +23,7 @@ class OrderServiceImplTest {
     void sendOrder() throws Exception {
         Order order = new Order();
         order.setOrderId(UUID.randomUUID().toString().replaceAll("-",""));
-        order.setUser_id("10000");
+        order.setUserId("10000");
         order.setText("买了一本书");
         order.setStatus(0); //0临时
         orderService.sendOrder(order);

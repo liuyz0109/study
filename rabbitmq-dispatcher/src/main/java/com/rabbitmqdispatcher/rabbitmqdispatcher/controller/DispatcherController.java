@@ -23,8 +23,9 @@ public class DispatcherController {
     @RequestMapping("/order")
     public Object order(String orderId) throws InterruptedException {
         String result = dispatcherService.saveOrder(orderId);
-        //设置系统休眠时间，因为order中设置了延迟时间为2秒，此处若设置休眠3秒，order会报错
-        Thread.sleep(3000);
+        // 设置系统休眠时间，因为order中设置了延迟时间为2秒，此处若设置休眠3秒，order会报错
+        // 此时订单数据保存，派送信息回滚，造成数据不一致
+//        Thread.sleep(3000);
         return result;
     }
 

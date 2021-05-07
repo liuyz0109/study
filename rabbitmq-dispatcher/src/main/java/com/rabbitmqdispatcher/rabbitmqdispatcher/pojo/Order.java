@@ -1,4 +1,4 @@
-package com.rabbitmqorder.rabbitmqorder.pojo;
+package com.rabbitmqdispatcher.rabbitmqdispatcher.pojo;
 
 import java.io.Serializable;
 
