@@ -1,7 +1,6 @@
 package com.rabbitmqorder.rabbitmqorder.service;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.rabbitmqorder.rabbitmqorder.pojo.Order;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
