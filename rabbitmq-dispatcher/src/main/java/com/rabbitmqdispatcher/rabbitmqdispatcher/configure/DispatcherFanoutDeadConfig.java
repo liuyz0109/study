@@ -43,7 +43,7 @@ public class DispatcherFanoutDeadConfig {
     }
 
     @Bean
-    public Binding dispatcjerFanoutBinding() {
+    public Binding dispatcherFanoutBinding() {
         return BindingBuilder.bind(dispatcherFanoutQueue()).to(dispatcherFanoutExchange());
     }
 

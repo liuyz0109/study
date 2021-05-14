@@ -37,7 +37,7 @@ public class FanoutDeadService {
             Dispatcher dispatcher = new Dispatcher();
             dispatcher.setDispatcherID(UUID.randomUUID().toString().replaceAll("-", ""));
             dispatcher.setOrderId(order.getOrderId());
-            dispatcher.setText(order.getText());
+            dispatcher.setText("死信：" + order.getText());
             dispatcher.setUserId(order.getUserId());
             dispatcher.setDate(new Date());
             //保存数据

@@ -33,7 +33,7 @@ public class FanoutService {
     @Autowired
     private JDBCService jdbcService;
 
-    /* 使用重试机制（不能使用try\catch，不然重试机制会失效，发生死循环）
+    /** 使用重试机制（不能使用try\catch，不然重试机制会失效，发生死循环）
      * retry:
           enabled: true # 开启重试配置，默认为false
           max-attempts: 5 # 重试次数，默认为3
@@ -60,7 +60,7 @@ public class FanoutService {
 //        System.out.println(1/0);
 //    }
 
-    /* 使用try+catch+手动ack
+    /** 使用try+catch+手动ack
      * acknowledge-mode: manual # 开启手动ack，默认为none，让程序控制消息的重发、删除、转移
      */
 //    @RabbitListener(queues = {"queue1"})
@@ -95,7 +95,8 @@ public class FanoutService {
 //        }
 //    }
 
-    /* 使用try+catch+手动ack+死信
+    /** 使用try+catch+手动ack+死信
+     * acknowledge-mode: manual # 开启手动ack，默认为none，让程序控制消息的重发、删除、转移
      * 在消费者队列中绑定死信交换机，当生产者生产消息发送到消费者交换机，
      * 消费者消费队列中的消息，在处理消息中发生异常，执行nack（即在发生异常时将消息发送给死信），
      * 再通过另一个业务去消费死信队列中的消息，完成闭环。
