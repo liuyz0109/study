@@ -37,7 +37,7 @@ public class RabbitMqDirectTTLConfiguration {
         Map<String, Object> args = new HashMap<>();
         //传入TTL参数
         //时间必须为int类型
-        args.put("x-message-ttl", 5000);
+        args.put("x-message-ttl", 10000);
         //设置最大存储信息数量
         args.put("x-max-length", 5);
         //绑定死信交换机

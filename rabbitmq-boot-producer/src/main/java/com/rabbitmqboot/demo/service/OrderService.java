@@ -72,6 +72,7 @@ public class OrderService {
         String orderid = UUID.randomUUID().toString().replaceAll("-", "");
         System.out.println("订单生成成功：" + orderid);
         String exchangeName = "topic_order_exchange";
+        //#：0或多级，可有可无；*：1级，有且仅有1个。
         //#.email.#
         //*.sms.*
         //#.wechat.*
