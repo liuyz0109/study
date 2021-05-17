@@ -51,7 +51,7 @@ public class OrderServiceImpl {
     }
 
     //创建rabbitmq确认回调机制
-    //被PostConstruct修饰的方法，会在加载Servlet的时候执行，且只会执行一次
+    //被PostConstruct修饰的方法regCallBack()，会在加载Servlet的时候执行，且只会执行一次
     //构造函数之后，init方法之前执行（所有的Bean加载完成）
     @PostConstruct
     public void regCallBack() {
