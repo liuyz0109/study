@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/rabbitmq-boot-consumer/rabbitmq-boot-consumer.iml" filepath="$PROJECT_DIR$/rabbitmq-boot-consumer/rabbitmq-boot-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmq-dispatcher/rabbitmq-dispatcher.iml" filepath="$PROJECT_DIR$/rabbitmq-dispatcher/rabbitmq-dispatcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmq-order/rabbitmq-order.iml" filepath="$PROJECT_DIR$/rabbitmq-order/rabbitmq-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-01/web-01.iml" filepath="$PROJECT_DIR$/web-01/web-01.iml" />
     </modules>
   </component>
 </project>

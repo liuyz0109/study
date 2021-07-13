@@ -8,11 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
         <module name="rabbitmq-dispatcher" />
-        <module name="rabbitmq-boot-consumer" />
         <module name="mybatis-core" />
         <module name="rabbitmq-boot-producer" />
         <module name="eureka-server-02" />
         <module name="rabbitmq-order" />
+        <module name="rabbitmq-boot-consumer" />
+        <module name="web-01" />
         <module name="rabbitmq" />
       </profile>
     </annotationProcessing>
@@ -26,6 +27,12 @@
       <module name="rabbitmq-boot-producer" target="1.8" />
       <module name="rabbitmq-dispatcher" target="1.8" />
       <module name="rabbitmq-order" target="1.8" />
+      <module name="web-01" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="web-01" options="-parameters" />
+    </option>
   </component>
 </project>

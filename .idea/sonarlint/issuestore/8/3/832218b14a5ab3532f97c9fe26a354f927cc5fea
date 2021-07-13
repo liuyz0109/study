@@ -1,0 +1,8 @@
+
+?
+java:S1481+")Remove this unused "type" local variable.(Ν–½
+N	java:S106="9Replace this use of System.out or System.err by a logger.(ªƒΨν
+[
+java:S2095&"EUse try-with-resources or close this "Channel" in a "finally" clause.(ωντ
+^
+java:S2095$"HUse try-with-resources or close this "Connection" in a "finally" clause.(ηϊΫφ

@@ -3,6 +3,7 @@ package com.liuyz.rabbitmq.work.fair;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.MessageProperties;
 
 import java.io.IOException;
 
@@ -55,7 +56,7 @@ public class Producer {
             for (int i = 1; i <= 20; i++) {
                 //消息内容
                 String msg = "Hello Rabbitmq-----" + i;
-                channel.basicPublish(exchangeName, routingKey, null, msg.getBytes());
+                channel.basicPublish(exchangeName, routingKey, MessageProperties.PERSISTENT_TEXT_PLAIN, msg.getBytes());
             }
             System.out.println("消息发送成功！！！");
         } catch (Exception e) {

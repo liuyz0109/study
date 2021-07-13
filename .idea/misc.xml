@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/rabbitmq-boot-producer/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-order/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-dispatcher/pom.xml" />
+        <option value="$PROJECT_DIR$/web-01/pom.xml" />
       </list>
     </option>
   </component>
