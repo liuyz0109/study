@@ -1,0 +1,6 @@
+
+t
+java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(‹§øÅ
+Œ
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(¡¦±U
+V	java:S125"<This block of commented-out lines of code should be removed.(¶õ¸Žûÿÿÿÿ

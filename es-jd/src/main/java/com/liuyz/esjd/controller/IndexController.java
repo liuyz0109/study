@@ -1,20 +1,19 @@
-package com.demo.demo;
+package com.liuyz.esjd.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author <a href="mailto:liuyaozong@gtmap.cn">liuyaozong</a>
- * @version 1.0, 2021/6/21
- * @description
+ * @version 1.0, 2021/7/16
+ * @description 首页控制层
  */
 
 @Controller
-public class MyController {
+public class IndexController {
 
-    @GetMapping("/index")
+    @GetMapping({"/", "/index"})
     public String index() {
-        System.out.println("请求进入页面");
         return "index";
     }
 

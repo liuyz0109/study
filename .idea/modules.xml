@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/rabbitmq-boot-producer/demo.iml" filepath="$PROJECT_DIR$/rabbitmq-boot-producer/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/es-api/es-api.iml" filepath="$PROJECT_DIR$/es-api/es-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/es-jd/es-jd.iml" filepath="$PROJECT_DIR$/es-jd/es-jd.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server-01/eureka-server-01.iml" filepath="$PROJECT_DIR$/eureka-server-01/eureka-server-01.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server-02/eureka-server-02.iml" filepath="$PROJECT_DIR$/eureka-server-02/eureka-server-02.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-core/mybatis-core.iml" filepath="$PROJECT_DIR$/mybatis-core/mybatis-core.iml" />

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -12,19 +13,22 @@
         <module name="rabbitmq-boot-producer" />
         <module name="eureka-server-02" />
         <module name="rabbitmq-order" />
+        <module name="es-jd" />
         <module name="rabbitmq-boot-consumer" />
         <module name="web-01" />
         <module name="rabbitmq" />
+        <module name="es-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
+      <module name="es-api" target="1.8" />
+      <module name="es-jd" target="1.8" />
       <module name="eureka-server-01" target="1.8" />
       <module name="eureka-server-02" target="1.8" />
       <module name="mybatis-core" target="1.5" />
       <module name="rabbitmq" target="1.8" />
       <module name="rabbitmq-boot-consumer" target="1.8" />
-      <module name="rabbitmq-boot-producer" target="1.8" />
       <module name="rabbitmq-dispatcher" target="1.8" />
       <module name="rabbitmq-order" target="1.8" />
       <module name="web-01" target="1.8" />
@@ -32,6 +36,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="es-api" options="-parameters" />
+      <module name="es-jd" options="-parameters" />
       <module name="web-01" options="-parameters" />
     </option>
   </component>
